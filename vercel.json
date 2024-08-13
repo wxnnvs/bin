@@ -4,6 +4,13 @@
     "src": "index.js",
     "use": "@vercel/node"
   }],
-  "buildCommand": "node index.js",
-  "devCommand": "node index.js"
+  "routes": [{
+    "src": "/(.*)",
+    "dest": "/"
+  }],
+  "functions": {
+    "api/index.js": {
+      "runtime": "nodejs14.x"
+    }
+  }
 }
