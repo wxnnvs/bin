@@ -4,5 +4,6 @@
     "src": "index.js",
     "use": "@vercel/node"
   }],
-  "buildCommand": "npm run dev"
+  "buildCommand": "node index.js",
+  "devCommand": "node index.js"
 }
