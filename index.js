@@ -1,9 +1,4 @@
 const express = require('express');
-/* 
-  const {
-    v4: uuidv4
-  } = require('uuid');
-*/
 const fs = require('fs');
 const path = require('path');
 
@@ -104,8 +99,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/paste', (req, res) => {
-  // const id = uuidv4();
-
   let id = generateShortId(); // Generate a short ID
 
   // Ensure the ID is unique by checking for existing files
@@ -195,10 +188,11 @@ app.get('/paste/:id', (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server running on http://localhost:${port}`);
+// });
 
+// Export the Express app as a serverless function
 module.exports = (req, res) => {
   app(req, res);
 };
