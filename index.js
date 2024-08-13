@@ -188,11 +188,6 @@ app.get('/paste/:id', (req, res) => {
   }
 });
 
-// app.listen(port, () => {
-//   console.log(`Server running on http://localhost:${port}`);
-// });
-
-// Export the Express app as a serverless function
-module.exports = (req, res) => {
-  app(req, res);
-};
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
