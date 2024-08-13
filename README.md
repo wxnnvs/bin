@@ -2,6 +2,10 @@
 
 a truely minimal paste app
 
+[Live version](https://minimal-bin.glitch.me/paste/XW8Aw6)
+
+---
+
 ### Usage
 
 1. Clone this repo
