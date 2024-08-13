@@ -198,3 +198,7 @@ app.get('/paste/:id', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
+
+module.exports = (req, res) => {
+  app(req, res);
+};
