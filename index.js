@@ -1,9 +1,12 @@
 const express = require('express');
+const keepalive = require('express-glitch-keepalive');
 const fs = require('fs');
 const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(keepalive);
 
 // Directory to store the pastes
 const pastesDir = path.join(__dirname, 'pastes');
