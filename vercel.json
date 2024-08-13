@@ -6,7 +6,7 @@
   }],
   "functions": {
     "index.js": {
-      "runtime": "node@14.x"
+      "runtime": "node-js@20.x"
     }
   }
 }
