@@ -180,7 +180,12 @@ app.get("/paste/:id", (req, res) => {
           padding: 10px;
           border: 1px solid #444;
           color: #e0e0e0;
-          max-width: 90vw;
+          max-width: 50vw; /* Limit the width */
+          max-height: 80vh; /* Limit the height */
+          overflow-y: auto; /* Enable vertical scrolling */
+          overflow-x: hidden; /* Prevent horizontal scrolling */
+          white-space: pre-wrap; /* Wrap lines */
+          word-wrap: break-word; /* Break long words */
         }
   
       </style>
