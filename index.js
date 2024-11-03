@@ -1,12 +1,12 @@
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Directory to store the pastes
-const pastesDir = path.join(__dirname, 'pastes');
+const pastesDir = path.join(__dirname, "pastes");
 
 // Ensure the pastes directory exists
 if (!fs.existsSync(pastesDir)) {
@@ -15,8 +15,9 @@ if (!fs.existsSync(pastesDir)) {
 
 // Function to generate a short random alphanumeric string
 function generateShortId(length = 6) {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let result = '';
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * characters.length));
   }
@@ -24,11 +25,13 @@ function generateShortId(length = 6) {
 }
 
 app.use(express.json());
-app.use(express.urlencoded({
-  extended: true
-}));
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.send(`
     <!DOCTYPE html>
     <html lang="en">
@@ -98,7 +101,7 @@ app.get('/', (req, res) => {
   `);
 });
 
-app.post('/paste', (req, res) => {
+app.post("/paste", (req, res) => {
   let id = generateShortId(); // Generate a short ID
 
   // Ensure the ID is unique by checking for existing files
@@ -113,12 +116,12 @@ app.post('/paste', (req, res) => {
   res.redirect(`/paste/${id}`);
 });
 
-app.get('/paste/:id', (req, res) => {
+app.get("/paste/:id", (req, res) => {
   const id = req.params.id;
   const filePath = path.join(pastesDir, `${id}.txt`);
 
   if (fs.existsSync(filePath)) {
-    const content = fs.readFileSync(filePath, 'utf-8');
+    const content = fs.readFileSync(filePath, "utf-8");
     res.send(`
       <!DOCTYPE html>
       <html lang="en">
@@ -177,6 +180,7 @@ app.get('/paste/:id', (req, res) => {
           padding: 10px;
           border: 1px solid #444;
           color: #e0e0e0;
+          max-width: 90vw;
         }
   
       </style>
@@ -184,7 +188,7 @@ app.get('/paste/:id', (req, res) => {
       </html>
     `);
   } else {
-    res.status(404).send('Paste not found');
+    res.status(404).send("Paste not found");
   }
 });
 
