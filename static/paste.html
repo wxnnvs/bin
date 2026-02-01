@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paste {{id}}</title>
+</head>
+
+<body>
+    <pre>{{content}}</pre>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        textarea {
+            width: 300px;
+            height: 150px;
+            background-color: #333;
+            color: #e0e0e0;
+            border: 1px solid #444;
+            padding: 10px;
+            font-size: 14px;
+            resize: none;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #444;
+            color: #e0e0e0;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        pre {
+            background-color: #333;
+            padding: 10px;
+            border: 1px solid #444;
+            color: #e0e0e0;
+            max-width: 50vw;
+            max-height: 80vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 768px) {
+            pre {
+                max-width: 90vw;
+            }
+        }
+    </style>
+</body>
+
+</html>
