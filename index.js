@@ -94,6 +94,17 @@ app.get("/", (req, res) => {
           border: 1px solid #444;
           color: #e0e0e0;
         }
+        
+        @media (max-width: 768px) {
+          textarea {
+            width: 90vw;
+          }
+          
+          button {
+            padding: 12px 24px;
+            font-size: 16px;
+          }
+        }
   
       </style>
     </body>
@@ -186,6 +197,12 @@ app.get("/paste/:id", (req, res) => {
           overflow-x: hidden; /* Prevent horizontal scrolling */
           white-space: pre-wrap; /* Wrap lines */
           word-wrap: break-word; /* Break long words */
+        }
+        
+        @media (max-width: 768px) {
+          pre {
+            max-width: 90vw;
+          }
         }
   
       </style>
