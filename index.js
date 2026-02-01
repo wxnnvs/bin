@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
+const escapeHtml = require("escape-html");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -142,7 +143,7 @@ app.get("/paste/:id", (req, res) => {
         <title>Paste ${id}</title>
       </head>
       <body>
-        <pre>${content}</pre>
+        <pre>${escapeHtml(content)}</pre>
         <style>
         body {
           background-color: #121212;
@@ -170,7 +171,7 @@ app.get("/paste/:id", (req, res) => {
           border: 1px solid #444;
           padding: 10px;
           font-size: 14px;
-          resize: none; /* Prevent resizing */
+          resize: none;
         }
         
         button {
@@ -191,12 +192,12 @@ app.get("/paste/:id", (req, res) => {
           padding: 10px;
           border: 1px solid #444;
           color: #e0e0e0;
-          max-width: 50vw; /* Limit the width */
-          max-height: 80vh; /* Limit the height */
-          overflow-y: auto; /* Enable vertical scrolling */
-          overflow-x: hidden; /* Prevent horizontal scrolling */
-          white-space: pre-wrap; /* Wrap lines */
-          word-wrap: break-word; /* Break long words */
+          max-width: 50vw;
+          max-height: 80vh;
+          overflow-y: auto;
+          overflow-x: hidden;
+          white-space: pre-wrap;
+          word-wrap: break-word;
         }
         
         @media (max-width: 768px) {
@@ -204,8 +205,7 @@ app.get("/paste/:id", (req, res) => {
             max-width: 90vw;
           }
         }
-  
-      </style>
+        </style>
       </body>
       </html>
     `);
