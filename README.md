@@ -4,12 +4,19 @@ a truely minimal paste app
 
 ---
 
-### Usage
+### Usage (Docker)
+
+1. Clone this repo
+2. run `docker compose up -d`
+3. Wait
+4. **Profit!** (port 3000)
+
+### Usage (Manual)
 
 1. Clone this repo
 2. run `pnpm install`
 3. Run `pnpm dev`
-4. **Profit!**
+4. **Profit!** (port 3000)
 
 ---
 
